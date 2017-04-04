@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ace-rails-ap (4.1.2)
     actioncable (5.0.2)
       actionpack (= 5.0.2)
       nio4r (>= 1.2, < 3.0)
@@ -154,6 +155,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ace-rails-ap
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
