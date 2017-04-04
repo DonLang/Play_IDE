@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require ace-rails-ap
+//= require ide.js
 //= require_tree .
+
+
+
