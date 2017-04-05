@@ -3,10 +3,8 @@
 
 # Play_IDE
 
-A simple sandbox to allow you to explore front end programming principles.
+A sandbox to allow you to explore front end programming principles.
 
-### The Team
-* [Don Lang](https://www.linkedin.com/in/donaldlang2)
 
 ### Requirements
 * Rails 5.0.1
