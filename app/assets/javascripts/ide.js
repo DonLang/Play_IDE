@@ -19,5 +19,11 @@ function setupEditor(){
     $iframe.ready(function() {
     $iframe.contents().find("body").empty().append(codeToRender);
   });
+
+  });
+
+  $(".languages").click(function(event){
+      event.preventDefault()
+
   });
 }
