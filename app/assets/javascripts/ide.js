@@ -13,12 +13,11 @@ function setupEditor(){
 
 
   $(":button").click(function(response){
-     var codeToRender = editor.getValue();
-     console.log(codeToRender)
-     var $iframe = $('#renderbox');
-$iframe.ready(function() {
-    $iframe.contents().find("body").append(codeToRender);
-});
-     var frame = $("#renderbox")[0].contentDocument;
+    var codeToRender = editor.getValue();
+    console.log(codeToRender)
+    var $iframe = $('#renderbox');
+    $iframe.ready(function() {
+    $iframe.contents().find("body").empty().append(codeToRender);
+  });
   });
 }
