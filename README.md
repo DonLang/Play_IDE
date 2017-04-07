@@ -1,5 +1,5 @@
 # README
-
+![Play_IDE](/app/assets/images/Play_IDE_screenshot.png)
 
 # Play_IDE
 
