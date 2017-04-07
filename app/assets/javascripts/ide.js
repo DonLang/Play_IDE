@@ -25,8 +25,6 @@ var javascript_editor = ace.edit("javascript_editor");
     javascript_editor.getSession().setMode("ace/mode/javascript");
     javascript_editor.setValue('')
     // setupButton(javascript_editor)
-
-
 }
 
 
@@ -46,7 +44,10 @@ function setupButton(editor){
 function setupNavbar(){
   $(".languages").click(function(event){
       event.preventDefault();
-     $(this).parents().addClass('active').siblings().removeClass('active')
+     $(this).parents().addClass('active').siblings().removeClass('active');
+     results = $($(this)[0]).html()
+     console.log(results)
+     $("#"+results.toLowerCase()+"_editor").show().siblings().hide()
 
   });
 }
