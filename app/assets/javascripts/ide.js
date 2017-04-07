@@ -9,22 +9,22 @@ $( document ).ready(function() {
 
 function setupEditor(){
   "use strict"
-  var editor = ace.edit("html_box");
-    editor.setTheme("ace/theme/twilight");
-    editor.getSession().setMode("ace/mode/html");
-    editor.setValue('<h2> The world is Great</h2>')
-    setupButton(editor)
-  var editor = ace.edit("css_box");
-    editor.setTheme("ace/theme/twilight");
-    editor.getSession().setMode("ace/mode/css");
-    editor.setValue('')
-    setupButton(editor)
+  var html_editor = ace.edit("html_editor");
+    html_editor.setTheme("ace/theme/twilight");
+    html_editor.getSession().setMode("ace/mode/html");
+    html_editor.setValue('<h2> The world is Great</h2>')
+    setupButton(html_editor)
+  var css_editor = ace.edit("css_editor");
+    css_editor.setTheme("ace/theme/twilight");
+    css_editor.getSession().setMode("ace/mode/css");
+    css_editor.setValue('')
+    // setupButton(css_editor)
 
-var editor = ace.edit("javascript_box");
-    editor.setTheme("ace/theme/twilight");
-    editor.getSession().setMode("ace/mode/javascript");
-    editor.setValue('')
-    setupButton(editor)
+var javascript_editor = ace.edit("javascript_editor");
+    javascript_editor.setTheme("ace/theme/twilight");
+    javascript_editor.getSession().setMode("ace/mode/javascript");
+    javascript_editor.setValue('')
+    // setupButton(javascript_editor)
 
 
 }
