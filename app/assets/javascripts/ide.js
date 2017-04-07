@@ -32,6 +32,8 @@ function setupButton(editor){
 function setupNavbar(){
   $(".languages").click(function(event){
       event.preventDefault();
+     console.log(this)
+     console.log($(this).parents().addClass('active').siblings().removeClass('active'))
 
   });
 }
