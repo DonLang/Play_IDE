@@ -13,36 +13,45 @@ function setupEditor(){
     html_editor.setTheme("ace/theme/twilight");
     html_editor.getSession().setMode("ace/mode/html");
     html_editor.setValue('<h2> The world is Great</h2>')
-    setupButton(html_editor);
+
   var css_editor = ace.edit("css_editor");
     css_editor.setTheme("ace/theme/twilight");
     css_editor.getSession().setMode("ace/mode/css");
     css_editor.setValue('');
-    // setupButton(css_editor)
-    $(":button").click(function(response){
-    var css_result = css_editor.getValue();
-    var $iframe = $('#renderbox');
-    $iframe.contents().find("head").empty().append("<style>" +css_result+"</style>");
-  });
 
-var javascript_editor = ace.edit("javascript_editor");
-    javascript_editor.setTheme("ace/theme/twilight");
-    javascript_editor.getSession().setMode("ace/mode/javascript");
-    javascript_editor.setValue('');
-    // setupButton(javascript_editor)
-}
+  var javascript_editor = ace.edit("javascript_editor");
+      javascript_editor.setTheme("ace/theme/twilight");
+      javascript_editor.getSession().setMode("ace/mode/javascript");
+      javascript_editor.setValue('');
+      setupButton(html_editor, css_editor, javascript_editor);
+  }
 
 
 
 
-function setupButton(editor){
+function setupButton(html_editor, css_editor, javascript_editor){
+
   $(":button").click(function(response){
-    var codeToRender = editor.getValue();
-    var $iframe = $('#renderbox');
-    $iframe.ready(function() {
-    $iframe.contents().find("body").empty().append(codeToRender);
+    console.log(html_editor, css_editor, javascript_editor)
+    var html_results = html_editor.getValue();
+    var css_results = css_editor.getValue();
+    var javascript_results = javascript_editor.getValue();
+    var H = '<html><head><style>' + css_results
+      H+='</style></head><body>'+ html_results;
+      H += '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>';
+      H += '<script>$(document).ready(function() {';
+      H += javascript_results;
+      H += '});</script>';
+      H += '</body></html>';
+
+    var previewFrame = document.getElementById("renderbox");
+    var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
+    preview.open();
+    preview.write(H);
+    preview.close();
+
     });
-  });
+
 }
 
 function setupNavbar(){
