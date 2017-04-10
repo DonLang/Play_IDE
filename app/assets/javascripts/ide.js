@@ -32,7 +32,6 @@ function setupEditor(){
 function setupButton(html_editor, css_editor, javascript_editor){
 
   $(":button").click(function(response){
-    console.log(html_editor, css_editor, javascript_editor)
     var html_results = html_editor.getValue();
     var css_results = css_editor.getValue();
     var javascript_results = javascript_editor.getValue();
