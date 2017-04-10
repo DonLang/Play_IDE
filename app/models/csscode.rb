@@ -1,0 +1,2 @@
+class Csscode < ApplicationRecord
+end
