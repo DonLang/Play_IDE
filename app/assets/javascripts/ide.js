@@ -13,6 +13,10 @@ function setupEditor(){
     html_editor.setTheme("ace/theme/twilight");
     html_editor.getSession().setMode("ace/mode/html");
     html_editor.setValue('<h2> The world is Great</h2>')
+    html_editor.setOptions({
+      fontFamily: "OpenDyslexicMono",
+      fontSize: "10pt"
+    });
 
   var css_editor = ace.edit("css_editor");
     css_editor.setTheme("ace/theme/twilight");
