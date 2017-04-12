@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "OpenDyslexicMono";
+  src: url(/assets/OpenDylexicMono-Regular.otf) format("otf");
+}
+
+
 #html_editor{
   height: 30em;
   }
@@ -12,3 +18,9 @@
 #renderbox{
   width: 100%;
   }
+.dyslexic{
+  font-family: "OpenDyslexicMono"
+}
+.dyslexic_checkbox{
+  float: right
+}
