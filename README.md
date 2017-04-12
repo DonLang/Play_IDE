@@ -4,6 +4,7 @@
 # Play_IDE
 
 A sandbox to allow you to explore front end programming principles.
+Started when a student with dyslexia complained that she couldn't change the font of JS fiddle to one she could work more easily with.
 Current working version [Play_IDE](https://play-ide.herokuapp.com/)
 
 
