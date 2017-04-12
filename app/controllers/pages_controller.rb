@@ -1,3 +1,4 @@
+class PagesController < ActionController::Base
 
 def create
   print params
@@ -12,7 +13,11 @@ private
 def page_params
   params.require(:page).permit(
     :name,
-    :email,
-    :description
     )
 end
+
+
+
+end
+
+

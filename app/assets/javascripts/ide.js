@@ -59,9 +59,16 @@ function saveButton(html_editor, css_editor, javascript_editor) {
 
       data.htmlcode.code = html_editor.getValue();
       data.csscode.code =  css_editor.getValue();
-      data.csscode.code = javascript_editor.getValue();
+      data.javascriptcode.code = javascript_editor.getValue();
 
       console.log(data);
+
+       $.ajax({
+      type: "POST",
+      url: "/pages",
+      data: data
+
+      })
 
     });
 
