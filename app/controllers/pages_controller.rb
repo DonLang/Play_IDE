@@ -1,4 +1,4 @@
-class PagesController < ActionController::Base
+class PagesController  < ApplicationController
 
 def create
   print params
@@ -7,11 +7,12 @@ def create
   html = Htmlcode.create(page_id: page.id, code:params['htmlcode']['code'])
   javascript = Javascriptcode.create(page_id: page.id, code:params['javascriptcode']['code'])
 
-  print(page, css, html, javascript)
+
 end
 
 def show
   @page = Page.find(params[:id])
+
 end
 
 private
