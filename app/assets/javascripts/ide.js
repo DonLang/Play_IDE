@@ -9,17 +9,22 @@ function setupEditor() {
   var html_editor = ace.edit("html_editor");
   html_editor.setTheme("ace/theme/twilight");
   html_editor.getSession().setMode("ace/mode/html");
-  html_editor.setValue('<h2> The world is Great</h2>');
+  html_editor.setValue($('.html_information').data('temp'));
+  $('.html_information').remove()
 
   var css_editor = ace.edit("css_editor");
   css_editor.setTheme("ace/theme/twilight");
   css_editor.getSession().setMode("ace/mode/css");
-  css_editor.setValue('');
+  css_editor.setValue($('.css_information').data('temp'));
+  $('.css_information').remove()
+
+
 
   var javascript_editor = ace.edit("javascript_editor");
   javascript_editor.setTheme("ace/theme/twilight");
   javascript_editor.getSession().setMode("ace/mode/javascript");
-  javascript_editor.setValue('');
+  javascript_editor.setValue($('.javascript_information').data('temp'));
+  $('.javascript_information').remove()
   renderButton(html_editor, css_editor, javascript_editor);
   saveButton(html_editor, css_editor, javascript_editor);
   fontChange(html_editor, css_editor, javascript_editor);
@@ -95,7 +100,6 @@ function setupNavbar() {
 
 function fontChange() {
   editors = arguments
-  console.log(editors.length)
   $('#opendyslexic').on('change', function() {
     if ($(this).is(':checked')) {
       for (i = 0; i < editors.length; i++) {

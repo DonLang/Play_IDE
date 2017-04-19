@@ -12,6 +12,10 @@ end
 
 def show
   @page = Page.find(params[:id])
+  @css = @page.csscode
+  @html = @page.htmlcode
+  @javascript = @page.javascriptcode
+
 
 end
 
