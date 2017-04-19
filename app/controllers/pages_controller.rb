@@ -12,7 +12,11 @@ end
 
 def show
   @page = Page.find(params[:id])
+  @css = @page.csscode
+  @html = @page.htmlcode
+  @javascript = @page.javascriptcode
 
+  render action: "../welcome/index"
 end
 
 private
