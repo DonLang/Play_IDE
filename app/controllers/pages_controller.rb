@@ -16,7 +16,7 @@ def show
   @html = @page.htmlcode
   @javascript = @page.javascriptcode
 
-
+  render action: "../welcome/index"
 end
 
 private
