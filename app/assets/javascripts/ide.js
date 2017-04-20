@@ -1,8 +1,15 @@
-$(document).ready(function() {
+// $(document).ready(function() {
+//   ready()
+// });
+$( document ).on('turbolinks:load', function() {
+  ready()
+})
+
+var ready = function(){
   'use strict';
   setupEditor();
   setupNavbar();
-});
+};
 
 function setupEditor() {
   "use strict";
@@ -18,13 +25,12 @@ function setupEditor() {
   css_editor.setValue($('.css_information').data('temp'));
   $('.css_information').remove()
 
-
-
   var javascript_editor = ace.edit("javascript_editor");
   javascript_editor.setTheme("ace/theme/twilight");
   javascript_editor.getSession().setMode("ace/mode/javascript");
   javascript_editor.setValue($('.javascript_information').data('temp'));
   $('.javascript_information').remove()
+
   renderButton(html_editor, css_editor, javascript_editor);
   saveButton(html_editor, css_editor, javascript_editor);
   fontChange(html_editor, css_editor, javascript_editor);
@@ -59,7 +65,6 @@ function renderButton(html_editor, css_editor, javascript_editor) {
 }
 
 function saveButton(html_editor, css_editor, javascript_editor) {
-
   $(".save_code").click(function(response) {
     var data = {
       htmlcode: {},
@@ -71,8 +76,6 @@ function saveButton(html_editor, css_editor, javascript_editor) {
     data.csscode.code = css_editor.getValue();
     data.javascriptcode.code = javascript_editor.getValue();
 
-    console.log(data);
-
     $.ajax({
       type: "POST",
       url: "/pages",
@@ -83,9 +86,6 @@ function saveButton(html_editor, css_editor, javascript_editor) {
   });
 
 }
-
-
-
 
 
 
@@ -118,6 +118,4 @@ function fontChange() {
     }
     $('.languages').toggleClass('dyslexic');
   });
-
-
 }
