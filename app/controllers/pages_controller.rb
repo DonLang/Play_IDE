@@ -18,15 +18,17 @@ def show
   render action: "../welcome/index"
 end
 
-private
+def edit
+  @user = User.find(params(:id))
+end
+
+# private
 
 def page_params
   params.require(:page).permit(
     :name,
     )
 end
-
-
 
 end
 

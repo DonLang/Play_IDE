@@ -76,12 +76,15 @@ function saveButton(html_editor, css_editor, javascript_editor) {
     data.csscode.code = css_editor.getValue();
     data.javascriptcode.code = javascript_editor.getValue();
 
+    if((document.URL).split('/').pop().length > 0){
+      console.log((document.URL).split('/').pop())
+    }
     $.ajax({
       type: "POST",
       url: "/pages",
       data: data
 
-    })
+    });
 
   });
 
