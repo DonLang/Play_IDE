@@ -18,8 +18,18 @@ def show
   render action: "../welcome/index"
 end
 
-def edit
-  @user = User.find(params(:id))
+def update
+  @page = Page.find(params[:id])
+  @css = @page.csscode
+  @html = @page.htmlcode
+  @javascript = @page.javascriptcode
+  @css.code = params['csscode']['code']
+  @css.save
+  @html.code = params['htmlcode']['code']
+  @html.save
+  @javascript.code = params['javascriptcode']['code']
+  @javascript.save
+  render action: "../welcome/index"
 end
 
 # private
