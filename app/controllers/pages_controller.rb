@@ -15,7 +15,7 @@ def show
   @html = @page.htmlcode
   @javascript = @page.javascriptcode
 
-  render action: "/../welcome/index"
+  render action: "../welcome/index"
 end
 
 def update
@@ -29,7 +29,7 @@ def update
   @html.save
   @javascript.code = params['javascriptcode']['code']
   @javascript.save
-  render action: "/../welcome/index"
+  render action: "../welcome/index"
 end
 
 # private
