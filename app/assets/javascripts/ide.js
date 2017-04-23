@@ -75,16 +75,18 @@ function saveButton(html_editor, css_editor, javascript_editor) {
     data.htmlcode.code = html_editor.getValue();
     data.csscode.code = css_editor.getValue();
     data.javascriptcode.code = javascript_editor.getValue();
-
+    var url = "/pages"
+    var type = "POST"
+    if((document.URL).split('/').pop().length > 0){
+      url += "/"+(document.URL).split('/').pop();
+      type = "PUT"
+    }
     $.ajax({
-      type: "POST",
-      url: "/pages",
+      type: type,
+      url: url,
       data: data
-
-    })
-
+    });
   });
-
 }
 
 

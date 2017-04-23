@@ -18,15 +18,27 @@ def show
   render action: "../welcome/index"
 end
 
-private
+def update
+  @page = Page.find(params[:id])
+  @css = @page.csscode
+  @html = @page.htmlcode
+  @javascript = @page.javascriptcode
+  @css.code = params['csscode']['code']
+  @css.save
+  @html.code = params['htmlcode']['code']
+  @html.save
+  @javascript.code = params['javascriptcode']['code']
+  @javascript.save
+  render action: "../welcome/index"
+end
+
+# private
 
 def page_params
   params.require(:page).permit(
     :name,
     )
 end
-
-
 
 end
 
