@@ -10,11 +10,14 @@ def create
 end
 
 def show
-  @page = Page.find(params[:id])
-  @css = @page.csscode
-  @html = @page.htmlcode
-  @javascript = @page.javascriptcode
-
+  if Page.exists?(params[:id])
+    @page = Page.find(params[:id])
+    @css = @page.csscode
+    @html = @page.htmlcode
+    @javascript = @page.javascriptcode
+  else
+    redirect_to "/" and return
+  end
   render action: "../welcome/index"
 end
 
