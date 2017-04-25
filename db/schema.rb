@@ -13,36 +13,36 @@
 ActiveRecord::Schema.define(version: 20170410182132) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "csscodes", force: :cascade do |t|
-    t.string   "code"
-    t.integer  "page_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_csscodes_on_page_id", using: :btree
+  create_table 'csscodes', force: :cascade do |t|
+    t.string   'code'
+    t.integer  'page_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['page_id'], name: 'index_csscodes_on_page_id', using: :btree
   end
 
-  create_table "htmlcodes", force: :cascade do |t|
-    t.string   "code"
-    t.integer  "page_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_htmlcodes_on_page_id", using: :btree
+  create_table 'htmlcodes', force: :cascade do |t|
+    t.string   'code'
+    t.integer  'page_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['page_id'], name: 'index_htmlcodes_on_page_id', using: :btree
   end
 
-  create_table "javascriptcodes", force: :cascade do |t|
-    t.string   "code"
-    t.integer  "page_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_javascriptcodes_on_page_id", using: :btree
+  create_table 'javascriptcodes', force: :cascade do |t|
+    t.string   'code'
+    t.integer  'page_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['page_id'], name: 'index_javascriptcodes_on_page_id', using: :btree
   end
 
-  create_table "pages", force: :cascade do |t|
-    t.string   "page_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'pages', force: :cascade do |t|
+    t.string   'page_name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
 end
